@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -11,9 +12,13 @@ using namespace std;
 // Fuction Prototypes
 void ReturningCustomer();
 void NewCustomer();
+// void AddCustoemr();
 void SignIn();
 bool CheckLogIn(string&, string&);
 void CheckValidity(string&, string&);
+
+// Global Variables
+//string fileName = "customers.txt";
 
 int main()
 {
@@ -73,8 +78,24 @@ void NewCustomer()
     getline(cin, password);
 
     CheckValidity(username, password);
+    // cout << "Now you will be returned to the login page" << endl;
+    
+    // AddCostumer();
+    
     ReturningCustomer();
 }
+
+/* void AddCustomer()
+{
+    ofstream outFile;
+    outFile.open("fileName");
+    
+    outFile >> username >> password;
+    outFile >> endl;
+    
+    ofstream.close();
+}
+*/
 
 void CheckValidity(string& username, string& password)
 {
@@ -101,15 +122,33 @@ void ReturningCustomer()
 
 bool CheckLogIn(string& username, string& password)
 {
-    bool match;
-
-    if(match = true)
+    // string fileUsername, filePassword;
+    
+    /*
+    ifstream inFile;
+    inFile.open(fileName);
+    
+    inFile <<  fileUsername << filePassword;
+    
+    if(fileUsername == username && filePassword == password)
     {
         return true;
     }
-    else
+    else if (fileUsername != username && filePassword == password)
     {
+        cout << "Your username is incorrect" << endl;
         return false;
     }
+    else if (fileUsername == username && filePassword != password
+    {
+        cout << "Your password is incorrect" << endl;
+        return false;
+    }
+    else 
+    {
+        cout << "Both the username and password are incorrect!" << endl;
+        return false;
+    }
+    */
 }
 
